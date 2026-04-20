@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF5E6"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🍰 Postres y Dulces"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#AD1457"
+            android:layout_marginBottom="10dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
+
+            <!-- Postre 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_margin="4dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/rebanada_pastel"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Rebanada de Pastel" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pastel $50" />
+            </LinearLayout>
+
+            <!-- Postre 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_margin="4dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/dona"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Dona" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dona $25" />
+            </LinearLayout>
+        </GridLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🥪 Snacks Salados"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:useDefaultMargins="true">
+
+            <!-- Snack 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_margin="4dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/bagel"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Bagel" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bagel $65" />
+            </LinearLayout>
+
+            <!-- Snack 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_margin="4dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/sandwich"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Sandwich" />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sándwich $75" />
+            </LinearLayout>
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnVolverSnacks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VOLVER AL MENÚ"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#4E342E" />
+
+    </LinearLayout>
+</ScrollView>

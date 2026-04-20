@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#FDF5E6"
+    tools:context=".MainActivity">
+
+    <!-- Logo de la Cafetería -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/logo_cafeteria"
+        android:scaleType="centerInside"
+        android:contentDescription="Logotipo oficial de Mhaisi Coffee" />
+
+    <!-- Título Principal -->
+    <TextView
+        android:id="@+id/txtTituloPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mhaisi Coffee"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#4E342E"
+        android:letterSpacing="0.05"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Separador visual sutil -->
+    <View
+        android:layout_width="60dp"
+        android:layout_height="2dp"
+        android:background="#D7CCC8"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Sección Informativa -->
+    <TextView
+        android:id="@+id/txtMenuInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:textSize="18sp"
+        android:textColor="#8D6E63"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/txtExplicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="Ordena desde tu dispositivo y recibe una notificación cuando tu pedido esté listo para ser retirado."
+        android:textColor="#5D4037"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4sp"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <!-- Botones de Acción -->
+    <Button
+        android:id="@+id/btnVerBebidas"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Explorar Bebidas"
+        android:textSize="16sp"
+        android:backgroundTint="#795548"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:layout_marginBottom="12dp"
+        app:cornerRadius="12dp" />
+
+    <Button
+        android:id="@+id/btnVerSnacks"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Snacks y Repostería"
+        android:textSize="16sp"
+        android:backgroundTint="#8D6E63"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:layout_marginBottom="12dp"
+        app:cornerRadius="12dp" />
+
+    <Button
+        android:id="@+id/btnIrAPagarHome"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="Finalizar Pedido"
+        android:textSize="16sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>
