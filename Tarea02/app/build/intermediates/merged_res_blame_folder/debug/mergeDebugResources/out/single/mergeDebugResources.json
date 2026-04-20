@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_americano.png.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/americano.png"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_capuchino.png.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/capuchino.png"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_sandwich.jpg.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/sandwich.jpg"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_rebanada_pastel.jpeg.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/rebanada_pastel.jpeg"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/layout_pedido.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/layout/pedido.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_bagel.jpeg.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/bagel.jpeg"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/layout_snacks.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/layout/snacks.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_logo_cafeteria.png.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/logo_cafeteria.png"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/layout_bebidas.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/layout/bebidas.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/xml_backup_rules.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_dona.jpeg.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/dona.jpeg"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_te_helado.png.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/te_helado.png"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/layout_compras.xml.flat",
+        "source": "com.example.tarea02.app-main-37:/layout/compras.xml"
+    },
+    {
+        "merged": "com.example.tarea02.app-debug-35:/drawable_frappe.png.flat",
+        "source": "com.example.tarea02.app-main-37:/drawable/frappe.png"
+    }
+]
