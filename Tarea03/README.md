@@ -17,4 +17,4 @@ Continuacion de la tarea 2 de PDDM, basada en un sistema de ordenes de forma vir
 * **Logcat (Logs):** Se implementó un sistema de registro bajo la etiqueta `Tarea3_Mhaisi` para rastrear la navegación y eventos en la consola de Android Studio.
 
 ---
-**Desarrollado por:** Miroslava Mora Espinosa  
+**Desarrollado por:** Miroslava Mora Espinosa y Gomez Aguilar Jesus
