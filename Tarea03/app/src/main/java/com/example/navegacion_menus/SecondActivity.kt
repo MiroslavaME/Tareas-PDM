@@ -16,11 +16,12 @@ class SecondActivity : AppCompatActivity() {
 
         bottomNavigation = findViewById(R.id.bottom_navigation)
 
-        // Cargar el fragmento inicial
+        // Cargar el fragmento inicial por defecto (Bebidas) de forma limpia
         if (savedInstanceState == null) {
             loadFragment(BebidasFragment())
         }
 
+        // LISTENER DE LA BARRA INFERIOR DE LA TIENDA
         bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {

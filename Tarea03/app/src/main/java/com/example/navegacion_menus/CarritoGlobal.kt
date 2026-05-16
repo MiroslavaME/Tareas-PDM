@@ -2,59 +2,99 @@ package com.example.navegacion_menus
 
 data class Producto(
     val nombre: String,
-    val cantidad: Int,
-    val precio: Double,
-    val categoria: String // Esto obliga a que todos los 'add' tengan categoria
+    var precio: Double,
+    val categoria: String,
+    var cantidad: Int = 1,
+    var especificaciones: String = "",
+    var idInstancia: Int = 0
 )
 
+// ... (Declaración de la data class Producto arriba)
+
 object CarritoGlobal {
-    // --- BEBIDAS CALIENTES ---
+    private val productosEnCarrito = mutableListOf<Producto>()
+    val listaFavoritos = mutableSetOf<String>()
+
     var latte = 0; var espresso = 0; var chocolate = 0; var capuccino = 0
-
-    // --- BEBIDAS FRÍAS ---
     var teFrio = 0; var limonada = 0; var smoothie = 0; var matcha = 0
-
-    // --- COMIDAS ---
     var baguette = 0; var cesar = 0; var pavo = 0; var bagel = 0
     var dona = 0; var tarta = 0; var zanahoria = 0; var cheesecake = 0
-
-    // --- EXTRAS ---
     var oaxaca = 0; var michoacan = 0; var rosa = 0; var aniversario = 0
     var tote = 0; var galletas = 0; var mix = 0
 
+    // Función pública para que CustomizationActivity conozca el precio base real del producto
+    fun obtenerPrecioBase(nombre: String): Double {
+        return when(nombre) {
+            "Latte Clásico" -> 65.0
+            "Espresso" -> 45.0
+            "Chocolate Caliente" -> 50.0
+            "Capuccino" -> 70.0
+            "Té Frío" -> 55.0
+            "Limonada de Fresa" -> 40.0
+            "Smoothie Asha" -> 80.0
+            "Matcha" -> 75.0
+            "Baguette Pizza" -> 95.0
+            "Ensalada César" -> 110.0
+            "Sandwich Pavo" -> 85.0
+            "Bagel Guacamole" -> 75.0
+            "Dona Caramelo" -> 35.0
+            "Tarta de Moras" -> 60.0
+            "Pastel Zanahoria" -> 70.0
+            "Cheesecake" -> 65.0
+            "Grano Oaxaca" -> 280.0
+            "Molido Michoacán" -> 265.0
+            "Termo Rosa" -> 450.0
+            "Termo Aniversario" -> 520.0
+            "Tote Bag Mhaisi" -> 190.0
+            "Galletas Avena" -> 38.0
+            "Mix Energético" -> 42.0
+            else -> 0.0
+        }
+    }
+
     fun obtenerProductosSeleccionados(): List<Producto> {
-        val lista = mutableListOf<Producto>()
+        val nuevaLista = mutableListOf<Producto>()
 
-        // Bebidas: Se agrega la categoría "bebida"
-        if (latte > 0) lista.add(Producto("Latte Clásico", latte, 65.0, "bebida"))
-        if (espresso > 0) lista.add(Producto("Espresso", espresso, 45.0, "bebida"))
-        if (chocolate > 0) lista.add(Producto("Chocolate caliente", chocolate, 50.0, "bebida"))
-        if (capuccino > 0) lista.add(Producto("Capuccino", capuccino, 70.0, "bebida"))
-        if (teFrio > 0) lista.add(Producto("Té Frío", teFrio, 55.0, "bebida"))
-        if (limonada > 0) lista.add(Producto("Limonada", limonada, 40.0, "bebida"))
-        if (smoothie > 0) lista.add(Producto("Smoothie Asha", smoothie, 80.0, "bebida"))
-        if (matcha > 0) lista.add(Producto("Matcha", matcha, 75.0, "bebida"))
+        fun desglosar(nombre: String, precio: Double, cat: String, cant: Int) {
+            for (i in 1..cant) {
+                val existente = productosEnCarrito.find { it.nombre == nombre && it.idInstancia == i }
+                // Si ya existe modificado, conserva su precio personalizado; si es nuevo, usa el precio base real
+                nuevaLista.add(existente ?: Producto(nombre, precio, cat, 1, "", i))
+            }
+        }
 
-        // Comidas: Se agrega la categoría "comida"
-        if (baguette > 0) lista.add(Producto("Baguette Pizza", baguette, 95.0, "comida"))
-        if (cesar > 0) lista.add(Producto("Ensalada César", cesar, 110.0, "comida"))
-        if (pavo > 0) lista.add(Producto("Sandwich Pavo", pavo, 85.0, "comida"))
-        if (bagel > 0) lista.add(Producto("Bagel Guacamole", bagel, 75.0, "comida"))
-        if (dona > 0) lista.add(Producto("Dona Caramelo", dona, 35.0, "comida"))
-        if (tarta > 0) lista.add(Producto("Tarta de Moras", tarta, 60.0, "comida"))
-        if (zanahoria > 0) lista.add(Producto("Pastel Zanahoria", zanahoria, 70.0, "comida"))
-        if (cheesecake > 0) lista.add(Producto("Cheesecake", cheesecake, 65.0, "comida"))
+        // Bebidas
+        if (latte > 0) desglosar("Latte Clásico", obtenerPrecioBase("Latte Clásico"), "bebida", latte)
+        if (espresso > 0) desglosar("Espresso", obtenerPrecioBase("Espresso"), "bebida", espresso)
+        if (chocolate > 0) desglosar("Chocolate caliente", obtenerPrecioBase("Chocolate caliente"), "bebida", chocolate)
+        if (capuccino > 0) desglosar("Capuccino", obtenerPrecioBase("Capuccino"), "bebida", capuccino)
+        if (teFrio > 0) desglosar("Té Frío", obtenerPrecioBase("Té Frío"), "bebida", teFrio)
+        if (limonada > 0) desglosar("Limonada de Fresa", obtenerPrecioBase("Limonada de Fresa"), "bebida", limonada)
+        if (smoothie > 0) desglosar("Smoothie Asha", obtenerPrecioBase("Smoothie Asha"), "bebida", smoothie)
+        if (matcha > 0) desglosar("Matcha", obtenerPrecioBase("Matcha"), "bebida", matcha)
 
-        // Extras: Se agrega la categoría "extra"
-        if (oaxaca > 0) lista.add(Producto("Grano Oaxaca", oaxaca, 280.0, "extra"))
-        if (michoacan > 0) lista.add(Producto("Molido Michoacán", michoacan, 265.0, "extra"))
-        if (rosa > 0) lista.add(Producto("Termo Rosa", rosa, 450.0, "extra"))
-        if (aniversario > 0) lista.add(Producto("Termo Aniversario", aniversario, 520.0, "extra"))
-        if (tote > 0) lista.add(Producto("Tote Bag Mhaisi", tote, 190.0, "extra"))
-        if (galletas > 0) lista.add(Producto("Galletas Avena", galletas, 38.0, "extra"))
-        if (mix > 0) lista.add(Producto("Mix Energético", mix, 42.0, "extra"))
+        // Comidas
+        if (baguette > 0) desglosar("Baguette Pizza", obtenerPrecioBase("Baguette Pizza"), "comida", baguette)
+        if (cesar > 0) desglosar("Ensalada César", obtenerPrecioBase("Ensalada César"), "comida", cesar)
+        if (pavo > 0) desglosar("Sandwich Pavo", obtenerPrecioBase("Sandwich Pavo"), "comida", pavo)
+        if (bagel > 0) desglosar("Bagel Guacamole", obtenerPrecioBase("Bagel Guacamole"), "comida", bagel)
+        if (dona > 0) desglosar("Dona Caramelo", obtenerPrecioBase("Dona Caramelo"), "comida", dona)
+        if (tarta > 0) desglosar("Tarta de Moras", obtenerPrecioBase("Tarta de Moras"), "comida", tarta)
+        if (zanahoria > 0) desglosar("Pastel Zanahoria", obtenerPrecioBase("Pastel Zanahoria"), "comida", zanahoria)
+        if (cheesecake > 0) desglosar("Cheesecake", obtenerPrecioBase("Cheesecake"), "comida", cheesecake)
 
-        return lista
+        // Extras / Tienda (Ajustados con los precios que tienes en tus fragmentos XML)
+        if (oaxaca > 0) desglosar("Grano Oaxaca", obtenerPrecioBase("Grano Oaxaca"), "extra", oaxaca)
+        if (michoacan > 0) desglosar("Molido Michoacán", obtenerPrecioBase("Molido Michoacán"), "extra", michoacan)
+        if (rosa > 0) desglosar("Termo Rosa", obtenerPrecioBase("Termo Rosa"), "extra", rosa)
+        if (aniversario > 0) desglosar("Termo Aniversario", obtenerPrecioBase("Termo Aniversario"), "extra", aniversario)
+        if (tote > 0) desglosar("Tote Bag Mhaisi", obtenerPrecioBase("Tote Bag Mhaisi"), "extra", tote)
+        if (galletas > 0) desglosar("Galletas Avena", obtenerPrecioBase("Galletas Avena"), "extra", galletas)
+        if (mix > 0) desglosar("Mix Energético", obtenerPrecioBase("Mix Energético"), "extra", mix)
+
+        productosEnCarrito.clear()
+        productosEnCarrito.addAll(nuevaLista)
+        return productosEnCarrito
     }
 
     fun limpiarCarrito() {
@@ -64,5 +104,6 @@ object CarritoGlobal {
         dona = 0; tarta = 0; zanahoria = 0; cheesecake = 0
         oaxaca = 0; michoacan = 0; rosa = 0; aniversario = 0
         tote = 0; galletas = 0; mix = 0
+        productosEnCarrito.clear()
     }
 }

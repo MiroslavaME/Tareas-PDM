@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class BebidasFragment : Fragment() {
@@ -16,15 +18,27 @@ class BebidasFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_bebidas, container, false)
 
+        // Configurar BEBIDAS CALIENTES
         setupCounter(root, R.id.btn_plus_latte, R.id.btn_minus_latte, R.id.tv_count_latte, "Latte Clásico")
         setupCounter(root, R.id.btn_plus_espresso, R.id.btn_minus_espresso, R.id.tv_count_espresso, "Espresso")
         setupCounter(root, R.id.btn_plus_chocolate, R.id.btn_minus_chocolate, R.id.tv_count_chocolate, "Chocolate Caliente")
         setupCounter(root, R.id.btn_plus_capuccino, R.id.btn_minus_capuccino, R.id.tv_count_capuccino, "Capuccino")
 
+        // Configurar BEBIDAS FRÍAS
         setupCounter(root, R.id.btn_plus_te, R.id.btn_minus_te, R.id.tv_count_te, "Té Frío")
-        setupCounter(root, R.id.btn_plus_limonada, R.id.btn_minus_limonada, R.id.tv_count_limonada, "Limonada")
+        setupCounter(root, R.id.btn_plus_limonada, R.id.btn_minus_limonada, R.id.tv_count_limonada, "Limonada de Fresa")
         setupCounter(root, R.id.btn_plus_smoothie, R.id.btn_minus_smoothie, R.id.tv_count_smoothie, "Smoothie Asha")
         setupCounter(root, R.id.btn_plus_matcha, R.id.btn_minus_matcha, R.id.tv_count_matcha, "Matcha")
+
+        // Configurar BOTONES DE FAVORITOS (IDs mapeados con el XML de abajo)
+        configurarFavorito(root, R.id.fab_fav_latte, "Latte Clásico")
+        configurarFavorito(root, R.id.fab_fav_espresso, "Espresso")
+        configurarFavorito(root, R.id.fab_fav_chocolate, "Chocolate Caliente")
+        configurarFavorito(root, R.id.fab_fav_capuccino, "Capuccino")
+        configurarFavorito(root, R.id.fab_fav_te, "Té Frío")
+        configurarFavorito(root, R.id.fab_fav_limonada, "Limonada de Fresa")
+        configurarFavorito(root, R.id.fab_fav_smoothie, "Smoothie Asha")
+        configurarFavorito(root, R.id.fab_fav_matcha, "Matcha")
 
         return root
     }
@@ -40,7 +54,6 @@ class BebidasFragment : Fragment() {
             modificarValorGlobal(productName, true)
             val nuevoValor = obtenerValorGlobal(productName)
             tvCount.text = nuevoValor.toString()
-
             Log.d("Tarea3_Mhaisi", "Bebidas: Se añadió '$productName'. Cantidad actual: $nuevoValor")
         }
 
@@ -50,9 +63,32 @@ class BebidasFragment : Fragment() {
                 modificarValorGlobal(productName, false)
                 val nuevoValor = obtenerValorGlobal(productName)
                 tvCount.text = nuevoValor.toString()
-
                 Log.d("Tarea3_Mhaisi", "Bebidas: Se quitó '$productName'. Cantidad actual: $nuevoValor")
             }
+        }
+    }
+
+    private fun configurarFavorito(rootView: View, fabId: Int, nombreProducto: String) {
+        val fab = rootView.findViewById<ImageButton>(fabId)
+
+        // Verificar estado inicial en la caché
+        if (CarritoGlobal.listaFavoritos.contains(nombreProducto)) {
+            fab?.setImageResource(R.drawable.ic_broken_24dp)
+        } else {
+            fab?.setImageResource(R.drawable.ic_favorite_24dp)
+        }
+
+        fab?.setOnClickListener {
+            if (CarritoGlobal.listaFavoritos.contains(nombreProducto)) {
+                CarritoGlobal.listaFavoritos.remove(nombreProducto)
+                fab.setImageResource(R.drawable.ic_favorite_24dp)
+                Toast.makeText(context, "$nombreProducto eliminado de favoritos", Toast.LENGTH_SHORT).show()
+            } else {
+                CarritoGlobal.listaFavoritos.add(nombreProducto)
+                fab.setImageResource(R.drawable.ic_broken_24dp)
+                Toast.makeText(context, "$nombreProducto ¡añadido a tus favoritos!", Toast.LENGTH_SHORT).show()
+            }
+            Log.d("Tarea3_Mhaisi", "Favoritos actuales: ${CarritoGlobal.listaFavoritos}")
         }
     }
 
@@ -60,10 +96,10 @@ class BebidasFragment : Fragment() {
         return when(nombre) {
             "Latte Clásico" -> CarritoGlobal.latte
             "Espresso" -> CarritoGlobal.espresso
-            "Chocolate Caliente" -> CarritoGlobal.chocolate // Antes decía "Americano"
+            "Chocolate Caliente" -> CarritoGlobal.chocolate
             "Capuccino" -> CarritoGlobal.capuccino
             "Té Frío" -> CarritoGlobal.teFrio
-            "Limonada" -> CarritoGlobal.limonada
+            "Limonada de Fresa" -> CarritoGlobal.limonada
             "Smoothie Asha" -> CarritoGlobal.smoothie
             "Matcha" -> CarritoGlobal.matcha
             else -> 0
@@ -75,10 +111,10 @@ class BebidasFragment : Fragment() {
         when(nombre) {
             "Latte Clásico" -> CarritoGlobal.latte += cambio
             "Espresso" -> CarritoGlobal.espresso += cambio
-            "Chocolate Caliente" -> CarritoGlobal.chocolate += cambio // Antes decía "Americano"
+            "Chocolate Caliente" -> CarritoGlobal.chocolate += cambio
             "Capuccino" -> CarritoGlobal.capuccino += cambio
             "Té Frío" -> CarritoGlobal.teFrio += cambio
-            "Limonada" -> CarritoGlobal.limonada += cambio
+            "Limonada de Fresa" -> CarritoGlobal.limonada+= cambio
             "Smoothie Asha" -> CarritoGlobal.smoothie += cambio
             "Matcha" -> CarritoGlobal.matcha += cambio
         }

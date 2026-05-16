@@ -25,6 +25,15 @@
             android:name=".SecondActivity"
             android:label="@string/title_second_activity"
             android:exported="false" />
+
+        <activity
+            android:name=".CustomizationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".FavoritosActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

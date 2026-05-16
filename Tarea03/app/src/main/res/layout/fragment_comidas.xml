@@ -57,7 +57,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/baguette" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/baguette" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_baguette" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Baguette Pizza" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$95.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -70,7 +73,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/ensalada" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/ensalada" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_cesar" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ensalada César" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$110.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -83,7 +89,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/sandwich" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/sandwich" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_pavo" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sandwich Pavo" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$85.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -96,7 +105,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/bagel" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/bagel" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_bagel" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bagel Guacamole" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$75.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -130,7 +142,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/dona" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/dona" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_dona" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dona de Caramelo" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$35.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -143,7 +158,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/tarta" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/tarta" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_tarta" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tarta de Moras" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$60.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -156,7 +174,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/pastel" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/pastel" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_zanahoria" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pastel de Zanahoria" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$70.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
@@ -169,7 +190,10 @@
 
                 <com.google.android.material.card.MaterialCardView android:layout_width="170dp" android:layout_height="wrap_content" android:layout_margin="8dp" app:cardCornerRadius="16dp" app:cardElevation="4dp" app:strokeWidth="0dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="#FFFFFF">
-                        <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/cheesecake" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center">
+                            <com.google.android.material.imageview.ShapeableImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/cheesecake" android:scaleType="centerCrop" app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+                            <ImageButton android:id="@+id/fab_fav_cheesecake" android:layout_width="36dp" android:layout_height="36dp" android:layout_gravity="top|start" android:layout_margin="4dp" android:padding="8dp" android:scaleType="fitCenter" android:background="@drawable/bg_translucent_fav" android:src="@drawable/ic_favorite_24dp" app:tint="#006241"/>
+                        </FrameLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cheesecake" android:textStyle="bold" android:textColor="#333333" android:layout_marginTop="12dp" android:gravity="center"/>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="$65.00" android:textColor="#006241" android:textStyle="bold" android:textSize="16sp" android:layout_marginTop="4dp"/>
                         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="12dp" android:background="#F5F5F5" android:padding="6dp">
