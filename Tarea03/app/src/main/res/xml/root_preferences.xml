@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- SECCIÓN INTERFAZ -->
+    <PreferenceCategory app:title="Apariencia">
+
+        <SwitchPreferenceCompat
+            app:key="tema_oscuro"
+            app:title="Tema Oscuro"
+            app:summary="Cambia la aplicación a colores oscuros para descansar la vista"
+            app:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <!-- SECCIÓN NOTIFICACIONES -->
+    <PreferenceCategory app:title="Notificaciones">
+
+        <SwitchPreferenceCompat
+            app:key="notif_pedidos"
+            app:title="Estado del pedido"
+            app:summary="Recibir alertas cuando tu café esté listo en barra para recoger"
+            app:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            app:key="notif_promos"
+            app:title="Cupones y Promociones"
+            app:summary="Enterarte antes que nadie de los descuentos de temporada"
+            app:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <!-- SECCIÓN CUENTA -->
+    <PreferenceCategory app:title="Mi Cuenta Mhaisi Coffee">
+
+        <EditTextPreference
+            app:key="nombre_usuario"
+            app:title="Nombre de Cliente"
+            app:useSimpleSummaryProvider="true"
+            app:dialogTitle="¿Cómo te llamamos en barra?" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
