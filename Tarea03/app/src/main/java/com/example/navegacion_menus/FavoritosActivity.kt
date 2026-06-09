@@ -44,19 +44,17 @@ class FavoritosActivity : AppCompatActivity() {
 
                 itemView.findViewById<TextView>(R.id.tv_nombre_item_favorito).text = nombreProducto
 
-                // CORRECCIÓN: Buscamos el precio usando el nombre exacto que viene guardado
                 val precioBase = CarritoGlobal.obtenerPrecioBase(nombreProducto)
                 itemView.findViewById<TextView>(R.id.tv_precio_item_favorito).text = "$${String.format("%.2f", precioBase)}"
 
                 val imgProducto = itemView.findViewById<ImageView>(R.id.img_item_favorito)
 
-                // Soportamos variaciones de nombre de Chocolate Caliente y Limonada de Fresa
                 when (nombreProducto) {
                     "Latte Clásico"      -> imgProducto.setImageResource(R.drawable.latte)
                     "Espresso"           -> imgProducto.setImageResource(R.drawable.espresso)
                     "Chocolate Caliente" -> imgProducto.setImageResource(R.drawable.chocolate)
                     "Capuccino"          -> imgProducto.setImageResource(R.drawable.capuccino)
-                    "Té Frío", "Té frío" -> imgProducto.setImageResource(R.drawable.tefrio)
+                    "Té Frío"            -> imgProducto.setImageResource(R.drawable.tefrio)
                     "Limonada de Fresa"  -> imgProducto.setImageResource(R.drawable.limonada)
                     "Smoothie Asha"      -> imgProducto.setImageResource(R.drawable.smoothie)
                     "Matcha"             -> imgProducto.setImageResource(R.drawable.matcha)
@@ -68,6 +66,14 @@ class FavoritosActivity : AppCompatActivity() {
                     "Tarta de Moras"     -> imgProducto.setImageResource(R.drawable.tarta)
                     "Pastel Zanahoria"   -> imgProducto.setImageResource(R.drawable.pastel)
                     "Cheesecake"         -> imgProducto.setImageResource(R.drawable.cheesecake)
+                    "Grano Oaxaca"       -> imgProducto.setImageResource(R.drawable.grano)
+                    "Molido Michoacán"   -> imgProducto.setImageResource(R.drawable.molido)
+                    "Termo Rosa"         -> imgProducto.setImageResource(R.drawable.termo_rosa)
+                    "Termo Aniversario"  -> imgProducto.setImageResource(R.drawable.aniversario)
+                    "Tote Bag Mhaisi"    -> imgProducto.setImageResource(R.drawable.tote)
+                    "Galletas Avena"     -> imgProducto.setImageResource(R.drawable.galletas)
+                    "Mix Energético"     -> imgProducto.setImageResource(R.drawable.mix)
+
                     else                 -> imgProducto.setImageResource(R.drawable.img)
                 }
 

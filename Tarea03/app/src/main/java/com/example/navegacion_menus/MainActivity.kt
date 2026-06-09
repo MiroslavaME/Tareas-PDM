@@ -3,6 +3,8 @@ package com.example.navegacion_menus
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem // CORREGIDO: Importación necesaria para el manejo de clics nativo
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigationView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val prefs = androidx.preference.PreferenceManager.getDefaultSharedPreferences(this)
+        val isDark = prefs.getBoolean("tema_oscuro", false)
+        if (isDark) {
+            androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -24,7 +34,9 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
 
-        navigationView.itemIconTintList = null
+        // CONFIGURACIÓN CORRECTA DE LA BARRA
+        setSupportActionBar(topAppBar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // 2. BOTÓN PRINCIPAL DE NAVEGACIÓN
         val btnNavigate = findViewById<Button>(R.id.btnNavigate)
@@ -34,6 +46,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // CONTROL DE LA HAMBURGUESA: Abre el Drawer de forma correcta al hacer clic
         topAppBar.setNavigationOnClickListener {
             drawerLayout.open()
         }
@@ -53,14 +66,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_orders -> {
                     Toast.makeText(this, "Consultando tus pedidos anteriores...", Toast.LENGTH_SHORT).show()
                 }
-
-                // CORREGIDO: Abre SecondActivity mandando la señal de cargar Favoritos
                 R.id.nav_favorites -> {
                     Toast.makeText(this, "Abriendo tus favoritos... ", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, FavoritosActivity::class.java) // <--- Cambiado aquí
+                    val intent = Intent(this, FavoritosActivity::class.java)
                     startActivity(intent)
                 }
-
                 R.id.nav_coupons -> {
                     Toast.makeText(this, "¡Revisando cupones disponibles!", Toast.LENGTH_SHORT).show()
                 }
@@ -75,31 +85,41 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        // 4. LÓGICA DEL TOP APP BAR
-        topAppBar.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.edit -> {
-                    Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.notifications -> {
-                    Toast.makeText(this, "No hay notificaciones nuevas", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.more01 -> {
-                    Toast.makeText(this, "Reportar un problema", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.more02 -> {
-                    Toast.makeText(this, "Más info sobre la app", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.more03 -> {
-                    Toast.makeText(this, "Ajustes de la aplicación", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
+        // CORRECCIÓN: Eliminamos topAppBar.setOnMenuItemClickListener de aquí para evitar el crasheo por duplicidad.
+    }
+
+    // INYECTA EL MENÚ DE LA TOP BAR
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.top_app_bar, menu)
+        return true
+    }
+
+    // CORRECCIÓN CRÍTICA: Método nativo correcto para manejar los clics del Top Bar cuando se usa setSupportActionBar
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.edit -> {
+                Toast.makeText(this, "Editar perfil", Toast.LENGTH_SHORT).show()
+                true
             }
+            R.id.notifications -> {
+                Toast.makeText(this, "No hay notificaciones nuevas", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.more01 -> {
+                Toast.makeText(this, "Reportar un problema", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.more02 -> {
+                Toast.makeText(this, "Más info sobre la app", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.more03 -> {
+                Log.d("Tarea3_Mhaisi", "Toolbar: El usuario abrió la pantalla de Ajustes")
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

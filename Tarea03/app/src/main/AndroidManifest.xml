@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Navegacion_Menus">
         <activity
+            android:name=".SettingsActivity"
+            android:label="@string/menu_more03"
+            android:theme="@style/Theme.Navegacion_Menus" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,20 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SecondActivity"
-            android:label="@string/title_second_activity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:label="@string/title_second_activity" />
         <activity
             android:name=".CustomizationActivity"
             android:exported="false" />
-
         <activity
             android:name=".FavoritosActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

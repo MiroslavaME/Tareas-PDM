@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F9F9F9"
+    android:background="?android:attr/windowBackground"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -20,14 +20,14 @@
             android:text="Mi Orden"
             android:textSize="32sp"
             android:fontFamily="sans-serif-black"
-            android:textColor="#006241"
+            android:textColor="?attr/colorBarraYBotones"
             android:layout_marginBottom="4dp"/>
 
         <View
-            android:layout_width="60dp"
+            android:layout_width="136dp"
             android:layout_height="4dp"
-            android:background="#006241"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="24dp"
+            android:background="@color/primary_color" />
 
         <TextView
             android:id="@+id/tv_empty_cart"
@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:text="Total a pagar: "
                 android:textSize="18sp"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -69,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:text="$0.00"
                 android:textSize="20sp"
-                android:textColor="@color/primary_color"
+                android:textColor="?attr/colorTextoPasos"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -78,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="Realizar pedido"
-            android:backgroundTint="#006241"
+            android:backgroundTint="@color/primary_color"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
             app:cornerRadius="32dp"
@@ -86,14 +88,13 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cancel_order"
-            style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:text="Cancelar pedido"
-            android:textColor="#852D1B"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#852D1B"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="32dp"/>
-
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

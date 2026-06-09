@@ -194,6 +194,7 @@ class PedidoFragment : Fragment() {
             "Limonada" to CarritoGlobal.limonada,
             "Smoothie Asha" to CarritoGlobal.smoothie,
             "Matcha" to CarritoGlobal.matcha,
+
             "Baguette Pizza" to CarritoGlobal.baguette,
             "Ensalada César" to CarritoGlobal.cesar,
             "Sandwich Pavo" to CarritoGlobal.pavo,
@@ -201,7 +202,14 @@ class PedidoFragment : Fragment() {
             "Dona Caramelo" to CarritoGlobal.dona,
             "Tarta de Moras" to CarritoGlobal.tarta,
             "Pastel Zanahoria" to CarritoGlobal.zanahoria,
-            "Cheesecake" to CarritoGlobal.cheesecake
+
+            "Grano Oaxaca" to CarritoGlobal.oaxaca,
+            "Molido Michoacán" to CarritoGlobal.michoacan,
+            "Termo Rosa" to CarritoGlobal.rosa,
+            "Termo Aniversario" to CarritoGlobal.aniversario,
+            "Tote Bag Mhaisi" to CarritoGlobal.tote,
+            "Galletas Avena" to CarritoGlobal.galletas,
+            "Mix Energético" to CarritoGlobal.mix
         )
 
         for ((nombre, cantidad) in mapaProductos) {

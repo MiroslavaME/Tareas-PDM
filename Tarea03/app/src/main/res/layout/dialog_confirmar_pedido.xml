@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp"
-        android:background="#FFFFFF">
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
             android:text="Confirmar Pedido"
             android:textSize="22sp"
             android:fontFamily="sans-serif-black"
-            android:textColor="#006241"
+            android:textColor="?attr/colorPrimary"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"/>
 
@@ -60,7 +60,7 @@
                 android:text="Total a pagar:"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#333333"
+                android:textColor="?android:attr/textColorPrimary"
                 android:layout_alignParentStart="true"/>
             <TextView
                 android:id="@+id/tv_total_confirmacion"
@@ -69,7 +69,7 @@
                 android:text="$0.00"
                 android:textSize="20sp"
                 android:fontFamily="sans-serif-black"
-                android:textColor="#006241"
+                android:textColor="?attr/colorPrimary"
                 android:layout_alignParentEnd="true"/>
         </RelativeLayout>
 

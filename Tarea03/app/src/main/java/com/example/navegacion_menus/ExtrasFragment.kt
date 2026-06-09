@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class ExtrasFragment : Fragment() {
@@ -16,6 +18,7 @@ class ExtrasFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_extras, container, false)
 
+        // Configurar CONTADORES DE CANTIDAD
         setupCounter(root, R.id.btn_plus_oaxaca, R.id.btn_minus_oaxaca, R.id.tv_count_oaxaca, "Grano Oaxaca")
         setupCounter(root, R.id.btn_plus_michoacan, R.id.btn_minus_michoacan, R.id.tv_count_michoacan, "Molido Michoacán")
 
@@ -25,6 +28,15 @@ class ExtrasFragment : Fragment() {
 
         setupCounter(root, R.id.btn_plus_galletas, R.id.btn_minus_galletas, R.id.tv_count_galletas, "Galletas Avena")
         setupCounter(root, R.id.btn_plus_mix, R.id.btn_minus_mix, R.id.tv_count_mix, "Mix Energético")
+
+        // CONFIGURAR FAVORITOS
+        configurarFavorito(root, R.id.fab_fav_oaxaca, "Grano Oaxaca")
+        configurarFavorito(root, R.id.fab_fav_michoacan, "Molido Michoacán")
+        configurarFavorito(root, R.id.fab_fav_rosa, "Termo Rosa")
+        configurarFavorito(root, R.id.fab_fav_aniversario, "Termo Aniversario")
+        configurarFavorito(root, R.id.fab_fav_tote, "Tote Bag Mhaisi")
+        configurarFavorito(root, R.id.fab_fav_galletas, "Galletas Avena")
+        configurarFavorito(root, R.id.fab_fav_mix, "Mix Energético")
 
         return root
     }
@@ -40,7 +52,6 @@ class ExtrasFragment : Fragment() {
             modificarValorGlobal(productName, true)
             val nuevoValor = obtenerValorGlobal(productName)
             tvCount.text = nuevoValor.toString()
-
             Log.d("Tarea3_Mhaisi", "Tienda: Se añadió '$productName'. Cantidad actual: $nuevoValor")
         }
 
@@ -50,9 +61,31 @@ class ExtrasFragment : Fragment() {
                 modificarValorGlobal(productName, false)
                 val nuevoValor = obtenerValorGlobal(productName)
                 tvCount.text = nuevoValor.toString()
-
                 Log.d("Tarea3_Mhaisi", "Tienda: Se quitó '$productName'. Cantidad actual: $nuevoValor")
             }
+        }
+    }
+
+    private fun configurarFavorito(rootView: View, fabId: Int, nombreProducto: String) {
+        val fab = rootView.findViewById<ImageButton>(fabId)
+
+        if (CarritoGlobal.listaFavoritos.contains(nombreProducto)) {
+            fab?.setImageResource(R.drawable.ic_broken_24dp)
+        } else {
+            fab?.setImageResource(R.drawable.ic_favorite_24dp)
+        }
+
+        fab?.setOnClickListener {
+            if (CarritoGlobal.listaFavoritos.contains(nombreProducto)) {
+                CarritoGlobal.listaFavoritos.remove(nombreProducto)
+                fab.setImageResource(R.drawable.ic_favorite_24dp)
+                Toast.makeText(context, "$nombreProducto eliminado de favoritos", Toast.LENGTH_SHORT).show()
+            } else {
+                CarritoGlobal.listaFavoritos.add(nombreProducto)
+                fab.setImageResource(R.drawable.ic_broken_24dp)
+                Toast.makeText(context, "$nombreProducto ¡añadido a tus favoritos!", Toast.LENGTH_SHORT).show()
+            }
+            Log.d("Tarea3_Mhaisi", "Favoritos actuales: ${CarritoGlobal.listaFavoritos}")
         }
     }
 

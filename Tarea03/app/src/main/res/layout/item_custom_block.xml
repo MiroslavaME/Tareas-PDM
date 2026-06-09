@@ -5,17 +5,14 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_marginBottom="16dp"
-    android:background="@drawable/border_light_gray">
-
-    <TextView
-        android:id="@+id/tv_item_number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Producto 1"
-        android:textColor="#006241"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:layout_marginBottom="12dp"/>
+    android:background="?android:attr/windowBackground"> <TextView
+    android:id="@+id/tv_item_number"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Producto 1"
+    android:textColor="?attr/colorBarraYBotones" android:textStyle="bold"
+    android:textSize="18sp"
+    android:layout_marginBottom="12dp"/>
 
     <LinearLayout
         android:id="@+id/section_size_container"
@@ -28,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tamaño"
-            android:textStyle="bold" />
+            android:textColor="?android:attr/textColorPrimary" android:textStyle="bold" />
 
         <RadioGroup
             android:id="@+id/section_size"
@@ -44,12 +41,10 @@
     </LinearLayout>
 
     <LinearLayout android:id="@+id/section_leche" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="12dp">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tipo de leche" android:textStyle="bold" android:layout_marginBottom="4dp"/>
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-            <RadioButton android:id="@+id/rb_entera" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Entera" />
-            <RadioButton android:id="@+id/rb_deslacto" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Deslactosada"/>
-        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tipo de leche" android:textColor="?android:attr/textColorPrimary" android:textStyle="bold" android:layout_marginBottom="4dp"/> <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <RadioButton android:id="@+id/rb_entera" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Entera" />
+        <RadioButton android:id="@+id/rb_deslacto" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Deslactosada"/>
+    </LinearLayout>
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
             <RadioButton android:id="@+id/rb_almendra" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Almendra"/>
@@ -58,12 +53,10 @@
     </LinearLayout>
 
     <LinearLayout android:id="@+id/section_endulzante" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="12dp">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Endulzante" android:textStyle="bold" android:layout_marginBottom="4dp"/>
-
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-            <RadioButton android:id="@+id/rb_sin_azucar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Sin Azúcar"/>
-            <RadioButton android:id="@+id/rb_azucar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Azúcar" />
-        </LinearLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Endulzante" android:textColor="?android:attr/textColorPrimary" android:textStyle="bold" android:layout_marginBottom="4dp"/> <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <RadioButton android:id="@+id/rb_sin_azucar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Sin Azúcar"/>
+        <RadioButton android:id="@+id/rb_azucar" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Azúcar" />
+    </LinearLayout>
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
             <RadioButton android:id="@+id/rb_stevia" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Stevia"/>
@@ -82,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Salsas y Aderezos"
-            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary" android:textStyle="bold"
             android:layout_marginTop="8dp"/>
 
         <LinearLayout
@@ -106,7 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vegetales"
-            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary" android:textStyle="bold"
             android:layout_marginTop="8dp"/>
 
         <LinearLayout
@@ -130,8 +123,7 @@
             android:layout_height="wrap_content"
             android:text="Añadir Extras (+$15)"
             android:textStyle="bold"
-            android:textColor="#006241"
-            android:layout_marginTop="8dp"/>
+            android:textColor="?attr/colorBarraYBotones" android:layout_marginTop="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -163,8 +155,7 @@
             android:layout_height="wrap_content"
             android:text="Topping extra (+$15 c/u)"
             android:textStyle="bold"
-            android:textColor="#006241"
-            android:layout_marginTop="8dp"
+            android:textColor="?attr/colorBarraYBotones" android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"/>
 
         <LinearLayout
